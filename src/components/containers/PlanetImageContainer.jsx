@@ -5,7 +5,7 @@ function PlanetImageContainer() {
     <div className="flex items-center justify-center">
       <img
         className="h-[290px] w-[290px]"
-        src="/src/assets/images/planet-earth.svg"
+        src="/src/assets/images/planet-mercury.svg"
         alt="Planet Image"
         style={{
           animation: "spin-slow var(--spin-duration) linear infinite",
