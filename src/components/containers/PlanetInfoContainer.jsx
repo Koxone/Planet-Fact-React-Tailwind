@@ -3,7 +3,7 @@ import OptionCard from "../cards/OptionCard";
 import TextInfo from "../text/TextInfo";
 import planetsData from "/data";
 
-function PlanetInfoContainer({ planet }) {
+function PlanetInfoContainer({ planet, checked }) {
   const sections = ["overview", "internal structure", "surface geology"];
 
   const [selectedOption, setSelectedOption] = useState("overview");
@@ -22,6 +22,7 @@ function PlanetInfoContainer({ planet }) {
             planet={planet}
             value={section}
             onChange={() => setSelectedOption(section)}
+            checked={selectedOption === section}
           />
         ))}
       </div>

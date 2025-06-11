@@ -1,6 +1,6 @@
 import React from "react";
 
-function OptionCard({ number, label, planet = "", value, onChange }) {
+function OptionCard({ number, label, planet = "", value, onChange, checked }) {
   const colorMap = {
     mercury: "has-[:checked]:bg-[#419ebb]",
     venus: "has-[:checked]:bg-[#eda249]",
@@ -24,6 +24,7 @@ function OptionCard({ number, label, planet = "", value, onChange }) {
         type="radio"
         className="hidden"
         onChange={() => onChange?.(value)}
+        checked={checked}
       />
       <p className="font-[Spartan] text-xs leading-7 font-bold tracking-widest uppercase">
         {number}

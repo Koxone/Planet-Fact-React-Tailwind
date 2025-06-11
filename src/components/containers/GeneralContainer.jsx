@@ -7,7 +7,7 @@ function GeneralContainer({ planet }) {
     <div className="grid flex-1 grid-cols-2 grid-rows-[1fr_auto] justify-between overflow-auto px-[165px] pt-[126px] pb-14">
       <PlanetImageContainer planet={planet} />
       <PlanetInfoContainer planet={planet} />
-      <CardsContainer />
+      <CardsContainer planet={planet} />
     </div>
   );
 }
