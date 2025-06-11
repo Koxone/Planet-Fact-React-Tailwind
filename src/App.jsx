@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="flex min-h-[100dvh] flex-col text-white">
       <MainHeader onClick={handlePlanetClick} />
-      {/* <GeneralContainer planet={selectedPlanet} showGeology={optionHandler} /> */}
+      <GeneralContainer planet={selectedPlanet} showGeology={optionHandler} />
     </div>
   );
 }

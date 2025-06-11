@@ -4,7 +4,7 @@ import MobileMenuContainer from "../containers/MobileMenuContainer";
 import { useState } from "react";
 
 function MainHeader({ onClick }) {
-  const [toggleMenu, setToggleMenu] = useState(true);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   const toggleHandler = () => {
     setToggleMenu(!toggleMenu);
@@ -28,7 +28,7 @@ function MainHeader({ onClick }) {
       <button
         onClick={toggleHandler}
         type="button"
-        className="flex cursor-pointer items-center"
+        className="flex cursor-pointer items-center md:invisible"
       >
         <img
           className="h-[17px] w-6"
@@ -37,9 +37,9 @@ function MainHeader({ onClick }) {
         />
       </button>
       <div className="absolute top-[100%] left-0 z-10 w-full">
-        <MobileMenuContainer visible={toggleMenu} />
+        <MobileMenuContainer visible={toggleMenu} onClick={onClick} />
       </div>
-      {/* <div className="invisible flex items-center gap-10">
+      <div className="invisible hidden items-center gap-10 md:visible md:flex">
         {planetsData.map((planet) => (
           <button
             key={planet.name.toLowerCase()}
@@ -49,7 +49,7 @@ function MainHeader({ onClick }) {
             {planet.name}
           </button>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 }

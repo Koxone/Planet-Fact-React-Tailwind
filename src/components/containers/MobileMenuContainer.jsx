@@ -1,7 +1,7 @@
 import planetData from "/data";
 import MobileHeaderCard from "../cards/MobileHeaderCard";
 
-function MobileMenuContainer({ visible }) {
+function MobileMenuContainer({ visible, onClick }) {
   return (
     <div
       className={`w-full transform flex-col overflow-hidden transition-all duration-300 ease-in-out ${
@@ -15,6 +15,7 @@ function MobileMenuContainer({ visible }) {
           key={planet.name}
           name={planet.name}
           color={planet.name.toLowerCase()}
+          onClick={() => onClick(planet.name.toLowerCase())}
         />
       ))}
     </div>
