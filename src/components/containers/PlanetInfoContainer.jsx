@@ -3,15 +3,22 @@ import TextInfo from "../text/TextInfo";
 import planetsData from "/data";
 
 function PlanetInfoContainer({ planet }) {
+  const sections = ["overview", "internal structure", "surface geology"];
   return (
     <div className="flex flex-col justify-between gap-16 self-start justify-self-end-safe">
       <div>
         <TextInfo planet={planet} />
       </div>
       <div className="flex flex-col gap-4 self-end">
-        <OptionCard number="01" label="overview" planet="Mercury" />
-        <OptionCard number="02" label="internal structure" planet="Mercury" />
-        <OptionCard number="03" label="surface geology" planet="Mercury" />
+        {sections.map((section) => (
+          <OptionCard
+            key={section}
+            number={sections.indexOf(section) + 1}
+            label={section.charAt(0).toUpperCase() + section.slice(1)}
+            planet={planet}
+            value={section}
+          />
+        ))}
       </div>
     </div>
   );
