@@ -1,10 +1,11 @@
 import planetsData from "/data";
-import MobileHeaderCard from "../cards/MobileHeaderCard";
 import MobileMenuContainer from "../containers/MobileMenuContainer";
+import MobileOptions from "../nav/MobileOptions";
 import { useState } from "react";
 
-function MainHeader({ onClick }) {
+function MainHeader({ onClick, planet }) {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const sections = ["overview", "internal structure", "surface geology"];
 
   const toggleHandler = () => {
     setToggleMenu(!toggleMenu);
@@ -36,8 +37,15 @@ function MainHeader({ onClick }) {
           alt="menu icon"
         />
       </button>
+      <MobileOptions label="overview" color={planet} />
       <div className="absolute top-[100%] left-0 z-10 w-full">
-        <MobileMenuContainer visible={toggleMenu} onClick={onClick} />
+        <MobileMenuContainer
+          visible={toggleMenu}
+          onClick={onClick}
+          notifyClick={() => {
+            setToggleMenu(false);
+          }}
+        />
       </div>
       <div className="invisible hidden items-center gap-10 md:visible md:flex">
         {planetsData.map((planet) => (
