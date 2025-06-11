@@ -1,6 +1,6 @@
 import React from "react";
 
-function OptionCard({ number = "01", label = "Overview", planet = "", value }) {
+function OptionCard({ number, label, planet = "", value }) {
   const colorMap = {
     mercury: "has-[:checked]:bg-[#419ebb]",
     venus: "has-[:checked]:bg-[#eda249]",

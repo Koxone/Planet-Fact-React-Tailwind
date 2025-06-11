@@ -33,6 +33,7 @@ body {
   src: url("./assets/fonts/Inter/Inter.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: "Antonio";
@@ -40,6 +41,7 @@ body {
     format("truetype");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: "Spartan";
@@ -47,6 +49,7 @@ body {
     format("truetype");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 
 @keyframes spin-slow {
