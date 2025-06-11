@@ -21,8 +21,7 @@ function MainHeader({ onClick }) {
           <button
             key={planet.name.toLowerCase()}
             onClick={() => onClick(planet.name.toLowerCase())}
-            className={`origin-center cursor-pointer font-[Inter] text-xs leading-6 font-bold uppercase transition-transform duration-100 ease-in-out 
-              hover:scale-150 ${hoverColors[planet.name.toLowerCase()]}`}
+            className={`origin-center cursor-pointer font-[Inter] text-xs leading-6 font-bold uppercase transition-transform duration-100 ease-in-out hover:scale-150 ${hoverColors[planet.name.toLowerCase()]}`}
           >
             {planet.name}
           </button>

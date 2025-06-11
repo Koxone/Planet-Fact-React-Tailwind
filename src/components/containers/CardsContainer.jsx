@@ -1,4 +1,4 @@
-import React from "react";
+import planetData from "/data";
 import MainCard from "../cards/MainCard";
 
 function CardsContainer() {
