@@ -16,7 +16,7 @@ function OptionCard({ number, label, planet = "", value, onChange, checked }) {
 
   return (
     <label
-      className={`flex h-12 w-[350px] cursor-pointer hover:bg-neutral-500 items-center gap-6 border border-[#979797] pl-6 ${selectedClass}`}
+      className={`invisible relative hidden h-12 w-[350px] cursor-pointer items-center justify-center gap-6 border border-[#979797] pl-6 hover:bg-neutral-500 md:visible md:static md:flex md:justify-normal ${selectedClass}`}
     >
       <input
         name="option"
@@ -26,12 +26,15 @@ function OptionCard({ number, label, planet = "", value, onChange, checked }) {
         onChange={() => onChange?.(value)}
         checked={checked}
       />
-      <p className="font-[Spartan] text-xs leading-7 font-bold tracking-widest uppercase">
+      <p className="invisible hidden font-[Spartan] text-xs leading-7 font-bold tracking-widest uppercase md:visible md:block">
         {number}
       </p>
-      <p className="font-[Spartan] text-xs leading-7 font-bold tracking-widest uppercase">
+      <p className="font-[Spartan] text-xs leading-7 font-bold tracking-widest uppercase md:w-auto md:text-left md:text-inherit md:normal-case md:transition-none md:duration-0 md:peer-checked:text-inherit">
         {label}
       </p>
+      <div
+        className={`absolute bottom-[-70%] left-[-2%] h-1 w-[85px] md:invisible md:hidden bg-[var(--color-${planet})] opacity-0 transition-opacity duration-200 peer-checked:opacity-100`}
+      ></div>
     </label>
   );
 }

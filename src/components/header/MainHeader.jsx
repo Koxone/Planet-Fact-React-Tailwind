@@ -37,7 +37,7 @@ function MainHeader({ onClick, planet }) {
           alt="menu icon"
         />
       </button>
-      <MobileOptions label="overview" color={planet} />
+      {/* <MobileOptions label="overview" color={planet} />
       <div className="absolute top-[100%] left-0 z-10 w-full">
         <MobileMenuContainer
           visible={toggleMenu}
@@ -46,7 +46,7 @@ function MainHeader({ onClick, planet }) {
             setToggleMenu(false);
           }}
         />
-      </div>
+      </div> */}
       <div className="invisible hidden items-center gap-10 md:visible md:flex">
         {planetsData.map((planet) => (
           <button
