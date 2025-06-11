@@ -10,6 +10,7 @@ function GeneralContainer({ planet }) {
       <PlanetImageContainer
         planet={planet}
         showGeology={selectedOption === "surface geology"}
+        showInternal={selectedOption === "internal structure"}
       />
       <PlanetInfoContainer planet={planet} onOptionChange={setSelectedOption} />
       <CardsContainer planet={planet} />
