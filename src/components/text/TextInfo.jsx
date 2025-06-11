@@ -1,16 +1,25 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import planetData from "/data";
 
-function TextInfo() {
+function TextInfo({ planet, option }) {
+  const [selectedPlanet, setSelectedPlanet] = useState(planet);
+
+  const planetInfo = planetData.find(
+    (p) => p.name.toLowerCase() === selectedPlanet.toLowerCase(),
+  );
+  const text = planetInfo.overview.content;
+
+  useEffect(() => {
+    setSelectedPlanet(planet);
+  }, [planet]);
+
   return (
     <div className="flex flex-col gap-6 self-end">
       <h2 className="font-[Antonio] text-[80px] font-medium uppercase">
-        mercury
+        {planetInfo?.name}
       </h2>
       <article className="w-[350px] font-[Spartan] text-sm text-gray-400">
-        Mercury is the smallest planet in the Solar System and the closest to
-        the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest
-        of all the Sun's planets. Mercury is one of four terrestrial planets in
-        the Solar System, and is a rocky body like Earth.
+        {text}
       </article>
       <div className="flex items-center gap-3">
         <span>Source:</span>
