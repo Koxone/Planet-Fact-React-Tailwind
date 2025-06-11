@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import GeneralContainer from "./components/containers/GeneralContainer";
 import MainHeader from "./components/header/MainHeader";
 import "./index.css";
-import MobileHeaderCard from "./components/cards/MobileHeaderCard";
 
 function App() {
   const [selectedPlanet, setSelectedPlanet] = useState("mercury");
@@ -22,7 +21,7 @@ function App() {
   return (
     <div className="flex min-h-[100dvh] flex-col text-white">
       <MainHeader onClick={handlePlanetClick} planet={selectedPlanet} />
-      {/* <GeneralContainer planet={selectedPlanet} showGeology={optionHandler} /> */}
+      <GeneralContainer planet={selectedPlanet} showGeology={optionHandler} />
     </div>
   );
 }
