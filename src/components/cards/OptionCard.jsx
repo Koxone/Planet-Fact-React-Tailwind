@@ -2,14 +2,14 @@ import React from "react";
 
 function OptionCard({ number = "01", label = "Overview", planet = "", value }) {
   const colorMap = {
-    Mercury: "has-[:checked]:bg-[#419ebb]",
-    Venus: "has-[:checked]:bg-[#eda249]",
-    Earth: "has-[:checked]:bg-[#6f2ed6]",
-    Mars: "has-[:checked]:bg-[#d14c32]",
-    Jupiter: "has-[:checked]:bg-[#db3a34]",
-    Saturn: "has-[:checked]:bg-[#cd5120]",
-    Uranus: "has-[:checked]:bg-[#1ec2a4]",
-    Neptune: "has-[:checked]:bg-[#2d68f0]",
+    mercury: "has-[:checked]:bg-[#419ebb]",
+    venus: "has-[:checked]:bg-[#eda249]",
+    earth: "has-[:checked]:bg-[#6f2ed6]",
+    mars: "has-[:checked]:bg-[#d14c32]",
+    jupiter: "has-[:checked]:bg-[#db3a34]",
+    saturn: "has-[:checked]:bg-[#cd5120]",
+    uranus: "has-[:checked]:bg-[#1ec2a4]",
+    neptune: "has-[:checked]:bg-[#2d68f0]",
   };
 
   const selectedClass = colorMap[planet] || "";
