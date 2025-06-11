@@ -3,10 +3,14 @@ import OptionCard from "../cards/OptionCard";
 import TextInfo from "../text/TextInfo";
 import planetsData from "/data";
 
-function PlanetInfoContainer({ planet, checked }) {
+function PlanetInfoContainer({ planet, onOptionChange }) {
   const sections = ["overview", "internal structure", "surface geology"];
 
   const [selectedOption, setSelectedOption] = useState("overview");
+
+  useEffect(() => {
+    onOptionChange?.(selectedOption);
+  }, [selectedOption]);
 
   return (
     <div className="flex flex-col justify-between gap-16 self-start justify-self-end-safe">

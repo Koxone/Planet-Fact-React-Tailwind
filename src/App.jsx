@@ -10,10 +10,18 @@ function App() {
     setSelectedPlanet(planetName);
   };
 
+  const optionHandler = (e) => {
+    if (e.target.value === "surface geology") {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <div className="flex h-screen flex-col text-white">
       <MainHeader onClick={handlePlanetClick} />
-      <GeneralContainer planet={selectedPlanet} />
+      <GeneralContainer planet={selectedPlanet} showGeology={optionHandler} />
     </div>
   );
 }
