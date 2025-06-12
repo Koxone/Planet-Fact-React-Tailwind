@@ -1,16 +1,27 @@
 import React from "react";
 
-function PlanetImageContainer({ planet, showGeology, showInternal }) {
-  const planetSize = {
-    mercury: "h-[290px] w-[290px]",
-    venus: "h-[400px] w-[400px]",
-    earth: "h-[450px] w-[450px]",
-    mars: "h-[336px] w-[336px]",
-    jupiter: "h-[582px] w-[582px]",
-    saturn: "h-[666px] w-[666px]",
-    uranus: "h-[458px] w-[458px]",
-    neptune: "h-[450px] w-[450px]",
-  };
+function PlanetImageContainer({ planet, showGeology, showInternal, isMobile }) {
+  const planetStyles = isMobile
+    ? {
+        mercury: "h-[111px] w-[111px]",
+        venus: "h-[154px] w-[154px]",
+        earth: "h-[173px] w-[173px]",
+        mars: "h-[129px] w-[129px]",
+        jupiter: "h-[224px] w-[224px]",
+        saturn: "h-[256px] w-[256px]",
+        uranus: "h-[176px] w-[176px]",
+        neptune: "h-[173px] w-[173px]",
+      }
+    : {
+        mercury: "h-[290px] w-[290px]",
+        venus: "h-[400px] w-[400px]",
+        earth: "h-[450px] w-[450px]",
+        mars: "h-[336px] w-[336px]",
+        jupiter: "h-[582px] w-[582px]",
+        saturn: "h-[666px] w-[666px]",
+        uranus: "h-[458px] w-[458px]",
+        neptune: "h-[450px] w-[450px]",
+      };
 
   const planetGeology = {
     mercury: "top-[50%] left-[22%]",
@@ -23,7 +34,7 @@ function PlanetImageContainer({ planet, showGeology, showInternal }) {
     neptune: "top-[65%] left-[32%]",
   };
 
-  const planetClass = planetSize[planet] || "h-[290px] w-[290px]";
+  const planetClass = planetStyles[planet];
   const planetGeo = planetGeology[planet];
 
   return (

@@ -1,10 +1,21 @@
 import PlanetImageContainer from "./PlanetImageContainer";
 import CardsContainer from "./CardsContainer";
 import PlanetInfoContainer from "./PlanetInfoContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function GeneralContainer({ planet }) {
   const [selectedOption, setSelectedOption] = useState("overview");
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="grid flex-1 grid-cols-2 grid-rows-[1fr_auto] justify-between overflow-auto px-[165px] pt-[126px] pb-14">
       <PlanetImageContainer
@@ -16,8 +27,13 @@ function GeneralContainer({ planet }) {
           selectedOption === "internal structure" ||
           selectedOption === "structure"
         }
+        isMobile={isMobile}
       />
-      <PlanetInfoContainer planet={planet} onOptionChange={setSelectedOption} />
+      <PlanetInfoContainer
+        planet={planet}
+        onOptionChange={setSelectedOption}
+        isMobile={isMobile}
+      />
       <CardsContainer planet={planet} />
     </div>
   );
