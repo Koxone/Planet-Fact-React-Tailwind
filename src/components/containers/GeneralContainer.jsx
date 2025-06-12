@@ -18,7 +18,7 @@ function GeneralContainer({ planet }) {
   }, []);
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-6 pt-[150px] pb-[47px] 
-    lg:grid lg:grid-cols-2 lg:grid-rows-[1fr_auto] lg:justify-between lg:overflow-auto lg:px-[165px] lg:pt-[126px] lg:pb-14">
+    lg:grid lg:grid-cols-2 lg:grid-rows-[1fr_auto] lg:justify-between lg:overflow-auto lg:px-[165px] lg:pt-[60px] lg:pb-14">
       <PlanetImageContainer
         planet={planet}
         showGeology={
