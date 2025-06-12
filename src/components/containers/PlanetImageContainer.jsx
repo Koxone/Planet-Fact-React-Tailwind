@@ -62,7 +62,7 @@ function PlanetImageContainer({ planet, showGeology, showInternal, isMobile }) {
           />
         )}
         <img
-          className={`absolute ${planetGeo} h-[199px] w-[163px] ${showGeology ? "block" : "hidden"}`}
+          className={`absolute ${planetGeo} w-[80px] lg:h-[199px] lg:w-[163px] ${showGeology ? "block" : "hidden"}`}
           src={`/src/assets/images/geology-${planet}.png`}
           alt=""
         />

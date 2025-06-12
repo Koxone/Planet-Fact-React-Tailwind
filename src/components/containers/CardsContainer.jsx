@@ -13,7 +13,7 @@ function CardsContainer({ planet }) {
     (p) => p.name.toLowerCase() === planet.toLowerCase(),
   );
   return (
-    <div className="flex h-fit w-full gap-4 self-end">
+    <div className="mt-7 flex h-fit w-full flex-col gap-4 self-end lg:col-span-2 lg:mt-0 lg:flex-row">
       {infoCard.map((card) => (
         <MainCard
           key={card.label}

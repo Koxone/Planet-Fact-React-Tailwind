@@ -42,14 +42,14 @@ function TextInfo({ planet, option }) {
   };
 
   return (
-    <div className="flex flex-col gap-6 self-end">
-      <h2 className="font-[Antonio] text-[80px] font-medium uppercase">
+    <div className="flex flex-col gap-4 lg:gap-6 lg:self-end">
+      <h2 className="text-center font-[Antonio] text-[40px] font-medium uppercase lg:text-left lg:text-[80px]">
         {planetInfo?.name}
       </h2>
-      <article className="w-[350px] font-[Spartan] text-sm text-gray-400">
+      <article className="text-center font-[Spartan] text-[11px] text-gray-400 lg:w-[350px] lg:text-left lg:text-sm">
         {renderText()}
       </article>
-      <div className="flex items-center gap-3">
+      <div className="flex self-center lg:self-start items-center gap-3">
         <span>Source:</span>
         <a
           className="flex items-center gap-1 underline"

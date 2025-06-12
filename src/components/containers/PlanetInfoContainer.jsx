@@ -8,24 +8,27 @@ function PlanetInfoContainer({ planet, onOptionChange, isMobile }) {
   const sections = ["overview", "internal structure", "surface geology"];
   const sectionsMobile = ["overview", "structure", "surface"];
 
-  // const [isMobile, setIsMobile] = useState(false);
-
-  // useEffect(() => {
-  //   const checkMobile = () => setIsMobile(window.innerWidth < 768);
-  //   checkMobile();
-
-  //   window.addEventListener("resize", checkMobile);
-  //   return () => window.removeEventListener("resize", checkMobile);
-  // }, []);
-
   const [selectedOption, setSelectedOption] = useState("overview");
 
   useEffect(() => {
     onOptionChange?.(selectedOption);
   }, [selectedOption]);
 
+  const planetMargin = {
+    mercury: "mt-[98px]",
+    venus: "mt-[76px]",
+    earth: "mt-[67px]",
+    mars: "mt-[88px]",
+    jupiter: "mt-[41px]",
+    saturn: "mt-[24px]",
+    uranus: "mt-[65px]",
+    neptune: "mt-[67px]",
+  };
+
+  const marginHandler = planetMargin[planet.toLowerCase()];
+
   return (
-    <div className="flex flex-col justify-between gap-16 self-start justify-self-end-safe">
+    <div className={`${marginHandler} flex flex-col justify-between self-start justify-self-end-safe lg:mt-4 lg:gap-16`}>
       <div>
         <TextInfo planet={planet} option={selectedOption} />
       </div>
