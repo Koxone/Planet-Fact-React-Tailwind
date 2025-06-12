@@ -11,7 +11,7 @@ function PlanetInfoContainer({ planet, onOptionChange }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
 
     window.addEventListener("resize", checkMobile);
