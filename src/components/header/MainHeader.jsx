@@ -1,6 +1,6 @@
 import planetsData from "/data";
 import MobileMenuContainer from "../containers/MobileMenuContainer";
-import MobileOptions from "../nav/MobileOptions";
+// import MobileOptions from "../nav/MobileOptions";
 import { useState } from "react";
 
 function MainHeader({ onClick, planet }) {
@@ -37,7 +37,7 @@ function MainHeader({ onClick, planet }) {
           alt="menu icon"
         />
       </button>
-      <MobileOptions label="overview" color={planet} />
+      {/* <MobileOptions label="overview" color={planet} /> */}
       <div className="absolute top-[100%] left-0 z-10 w-full">
         <MobileMenuContainer
           visible={toggleMenu}

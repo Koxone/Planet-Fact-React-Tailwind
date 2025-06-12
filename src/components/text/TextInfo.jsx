@@ -17,8 +17,10 @@ function TextInfo({ planet, option }) {
       case "overview":
         return planetInfo.overview.content;
       case "internal structure":
+      case "structure":
         return planetInfo.structure.content;
       case "surface geology":
+      case "surface":
         return planetInfo.geology.content;
       default:
         return planetInfo.overview.content;
@@ -29,8 +31,10 @@ function TextInfo({ planet, option }) {
       case "overview":
         return planetInfo.overview.source;
       case "internal structure":
+      case "structure":
         return planetInfo.structure.source;
       case "surface geology":
+      case "surface":
         return planetInfo.geology.source;
       default:
         return planetInfo.overview.source;

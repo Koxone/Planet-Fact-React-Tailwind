@@ -16,7 +16,7 @@ function OptionCard({ number, label, planet = "", value, onChange, checked }) {
 
   return (
     <label
-      className={`flex h-12 w-[350px] cursor-pointer hover:bg-neutral-500 items-center gap-6 border border-[#979797] pl-6 ${selectedClass}`}
+      className={`flex h-12 w-[350px] cursor-pointer items-center gap-6 border border-[#979797] pl-6 hover:bg-neutral-500 ${selectedClass}`}
     >
       <input
         name="option"

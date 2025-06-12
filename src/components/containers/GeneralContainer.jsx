@@ -9,8 +9,13 @@ function GeneralContainer({ planet }) {
     <div className="grid flex-1 grid-cols-2 grid-rows-[1fr_auto] justify-between overflow-auto px-[165px] pt-[126px] pb-14">
       <PlanetImageContainer
         planet={planet}
-        showGeology={selectedOption === "surface geology"}
-        showInternal={selectedOption === "internal structure"}
+        showGeology={
+          selectedOption === "surface geology" || selectedOption === "surface"
+        }
+        showInternal={
+          selectedOption === "internal structure" ||
+          selectedOption === "structure"
+        }
       />
       <PlanetInfoContainer planet={planet} onOptionChange={setSelectedOption} />
       <CardsContainer planet={planet} />
