@@ -18,7 +18,7 @@ function PlanetImageContainer({ planet, showGeology, showInternal, isMobile }) {
         earth: "h-[450px] w-[450px]",
         mars: "h-[336px] w-[336px]",
         jupiter: "h-[582px] w-[582px]",
-        saturn: "h-[666px] w-[666px]",
+        saturn: "h-[500px] w-[500px]",
         uranus: "h-[458px] w-[458px]",
         neptune: "h-[450px] w-[450px]",
       };
